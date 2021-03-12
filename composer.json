@@ -1,0 +1,65 @@
+{
+  "name": "webster/wordpress-homestead",
+  "type": "project",
+  "license": "None",
+  "description": "Standard WordPress installation w/ Laravel Homestead development environment",
+  "authors": [
+    {
+      "name": "Webster",
+      "email": "contact@webstertech.in"
+    }
+  ],
+  "keywords": [
+    "wordpress", "composer", "vagrant", "wp"
+  ],
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.4",
+    "johnpbloch/wordpress": "*",
+    "laravel/homestead": "^7.7",
+    "php": ">=5.6",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/ga-google-analytics": "*",
+    "wpackagist-plugin/invisible-recaptcha": "*",
+    "wpackagist-plugin/redirection": "*",
+    "wpackagist-plugin/simple-history": "*",
+    "wpackagist-plugin/wordpress-seo": "*",
+    "wpackagist-plugin/wp-mail-smtp":"*",
+    "wpackagist-plugin/wp-smushit": "*",
+    "wp-premium/gravityforms": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0.2"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin", "roots/wp-h5bp-htaccess"],
+      "wp-content/plugins/{$name}/": ["type:wordpress-plugin", "wp-premium/gravityforms"],
+      "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "wordpress-temp/"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf wordpress-temp/composer.json wordpress-temp/wp-content/plugins/* wordpress-temp/wp-content/themes/*",
+      "cp -r wordpress-temp/* .",
+      "rm -rf ./wordpress-temp"
+    ],
+    "post-update-cmd": [
+      "rm -rf wordpress-temp/composer.json wordpress-temp/wp-content/plugins/* wordpress-temp/wp-content/themes/*",
+      "cp -r wordpress-temp/* .",
+      "rm -rf ./wordpress-temp"
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

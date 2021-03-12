@@ -1,0 +1,49 @@
+/* stylelint-disable plugin/selector-bem-pattern */
+/**
+ * This File should select on basic elements that are not specific to components. Below are common use cases
+ */
+/* Set default styling for links on site */
+/* change color and transition example
+a {
+  color: #000;
+  transition: all 0.4s ease;
+  &:hover {
+    color: #f5502a;
+    text-decoration: none;
+  }
+}
+*/
+/* Override bootstrap button styles here: (first set related colors/variables in _variables.scss file) */
+/* make buttons have rounded edges example
+.btn {
+  border-radius: 12px;
+}
+/**
+ * Wordpress Specific Section
+ * This section holds all the specific CSS needed to make wordpress content editor/ACF work nicely.
+ */
+/* Set white-space to pre-line to make using &#10; possible to control line breaks without <br/> tags or changing other behavior*/
+
+/* stylelint-disable */
+body {
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p,
+li,
+a {
+  white-space: pre-line;
+}

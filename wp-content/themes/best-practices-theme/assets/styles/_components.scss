@@ -1,0 +1,25 @@
+/* Custom styles here
+ * Note, if this file exceeds 200 lines of code, it must be broken up into multiple files and imported using @import
+ * CSS MUST follow BEM Rules AND STYLE LINT RULES!!!! OR CSS WILL NOT COMPILE!!!!
+ */
+
+// Mark every component like the below to pass BEM linting
+
+/** @define block */
+.block {
+  color: #000;
+
+  &__element {
+    color: #f0ad4e;
+    font-size: 14px;
+
+    &--modifier {
+      color: #ff0;
+    }
+  }
+
+  &__element2 {
+    color: #fff;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,6 @@
+// Custom mixins here
+
+@mixin font-size($value1, $value2: 1.25) {
+  font-size: $value1;
+  line-height: $value2;
+}

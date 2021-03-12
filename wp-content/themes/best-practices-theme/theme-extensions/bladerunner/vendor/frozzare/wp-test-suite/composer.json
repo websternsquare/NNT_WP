@@ -1,0 +1,23 @@
+{
+  "name": "frozzare/wp-test-suite",
+  "description": "Run WordPress test easy",
+  "keywords": ["wordpress", "test", "suite", "easy"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fredrik Forsmo",
+      "email": "fredrik.forsmo@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "phpunit/phpunit": "~5.0"
+  },
+  "autoload": {
+    "files": [
+      "src/class-wp-test-suite.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
